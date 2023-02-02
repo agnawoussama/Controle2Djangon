@@ -1,0 +1,26 @@
+
+
+<!doctype html>
+<html>
+<head>
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% bootstrap_messages %}
+    <title>Controle N2 Django</title>
+</head>
+<body >
+    {% include 'navbar.html' %}
+    <br/>
+    <div class="container" >
+    {% block content %}
+    <div class="d-flex align-items-center flex-column">
+        <h1 class="text-center">Bill Gates</h1>
+        <br/>
+        {% load static %} <img class="img-responsive img-fluid rounded w-25" src="{% static "images/imgBill.jpg" %}">
+    </div>
+   {% endblock %}
+   
+    </div> 
+    </body>
+</html>

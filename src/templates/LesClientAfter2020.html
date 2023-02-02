@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class='sub-container'>
+    <h2 class="text-center">Liste des Clients</h2>
+    <br/>
+    <table class="table table-striped table-bordered border-secondary rounded text-center">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Age</th>
+            <th scope="col">Cin</th>
+            <th scope="col">DateEnrg</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for client in filteredClients %}
+          <tr>
+            <th scope="row">{{ client.id }}</th>        
+            <td>{{ client.nom }}</td>
+            <td>{{ client.prenom }}</td>
+            <td>{{ client.age }}</td>
+            <td>{{ client.cin }}</td>
+            <td>{{ client.dateEnrg|date:"d/m/o"}}</td>          
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %} 
